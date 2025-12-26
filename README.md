@@ -57,6 +57,12 @@ For additional troubleshooting steps on Linux visit our [troubleshooting page](h
 
 <br />
 
+MacOS
+1. Install MacOS Standalone Flash Player from bymrefitted.com/downloads
+2. Download The Launcher based on your Mac Processor(Intel based or Apple Silicon based)
+3. Open the file, will got a warning, need to open Privacy & Security, click Open Anyway
+4. Move the bymr-launcher to Applications
+
 # Development ⚙️
 
 ## Prerequisites
@@ -95,3 +101,17 @@ cargo tauri dev
 ```
 
 This launches a Vite development server with fast hot-reload capabilities for your frontend changes. The development server is also accessible at **http://localhost:5173** if you prefer to develop directly in your browser.
+
+## MacOS build
+
+1. add target
+```bash
+rustup target add x86_64-apple-darwin
+rustup target add aarch64-apple-darwin
+```
+
+2. build based on the preferred processor
+```bash
+cargo tauri build --target x86_64-apple-darwin
+cargo tauri build --target aarch64-apple-darwin
+```
